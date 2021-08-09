@@ -1,20 +1,17 @@
 function fibonacci(num) {
   // create an empty array to push our values into
-  let fibArr = []
+  let fibArr = [0, 1]
   // handle edge case of entering 0
   if(num === 0) return 0
   // iterate through the number given
-  for(let i = 0; i < num; i++){
-    // give the array the proper building blocks of [0, 1] to start the Fib sequence
-    if(i === 0){
-      fibArr.push(0)
-      fibArr.push(1)
-      // add the previous value to the current iteration value and put it in the Fib Array
-    } else fibArr.push((fibArr[i - 1] + fibArr[i]))
+  for(let i = 1; i < num; i++){
+    // populate the array up to the number given
+    fibArr.push((fibArr[i - 1] + fibArr[i]))
   }
-  // return the value of the given index of our Fibonacci array
-  return fibArr[num]
+// return the value of the given index of our Fibonacci array
+return fibArr[num]
 }
+
 
 if (require.main === module) {
   // add your own tests in here
@@ -36,3 +33,4 @@ module.exports = fibonacci;
 
 // Please add your pseudocode to this file
 // And a written explanation of your solution
+
